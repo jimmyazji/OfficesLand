@@ -7,6 +7,7 @@ export const HeaderData = {
     catalogText: "الكتالوج",
     contactusText: "اتصل بنا",
     signinText: "تسجيل الدخول",
+    registerText:"حساب جديد",
     dashboardText: "لوحة التحكم",
 };
 

@@ -26,7 +26,7 @@ export default function HeaderContainer(props) {
                         <NavBar.SelectLang />
                         {props.auth.user
                             ?
-                            <NavBar.DashboardButton URL={route('dashboard')}>
+                            <NavBar.DashboardButton URL={route('login')}>
                                 {HeaderData.dashboardText}
                             </NavBar.DashboardButton>
                             :

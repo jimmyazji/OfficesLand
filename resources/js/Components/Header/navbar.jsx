@@ -107,7 +107,7 @@ NavBar.LoginButton = function NavBarLoginButton({ URL, children }) {
 
 NavBar.RegisterButton = function NavBarRegisterButton({ URL, children }) {
     return (
-        <div className='hidden md:block ml-4 text-base transition duration-300 text-accent  hover:text-primary'>
+        <div className='hidden md:block text-base transition duration-300 text-accent  hover:text-primary'>
             <Link href={URL}>
                 {children}
             </Link>
