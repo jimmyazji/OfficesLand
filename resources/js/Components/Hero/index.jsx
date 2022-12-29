@@ -10,7 +10,7 @@ export default function Hero({ children }) {
 
 Hero.Container = function HeroContainer({ children }) {
     return (
-        <div className={`relative flex flex-col justify-center items-end md:h-[700px] h-[400px]`}>
+        <div className={`relative flex flex-col justify-center items-start md:h-[700px] h-96`}>
             {children}
         </div>
     )

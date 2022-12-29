@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 export default function Info({ children }) {
     return (
-        <div className="z-20 w-full max-w-[1240px] mx-auto">
+        <div className="z-20 w-full h-full flex flex-col justify-center items-start max-w-7xl mx-auto">
             {children}
         </div>
     )
@@ -10,12 +10,11 @@ export default function Info({ children }) {
 
 Info.Container = function InfoContainer({ children }) {
     return (
-        <div className="flex flex-col items-end mx-2">
+        <div className="">
             {children}
         </div>
     )
 }
-
 
 Info.Title = function InfoTitle({ children }) {
     return (

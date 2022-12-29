@@ -11,11 +11,13 @@ export const HeaderData = {
     dashboardText: "Dashboard",
 };
 
+
+
 //section--hero
 export const HeroData = {
-    title: 'المحقق كونان: عروس شيبويا',
-    subtitle: 'اقتحم أحد المهاجمين فجأة حفل زفاف وأصيب تاكاجي بينما كان يحاول حماية ساتو. نجا تاكاجي وتم تسوية الوضع ، ولكن في عيون ساتو ، صورة حاصد الأرواح التي رأتها عندما قُتل جينبي ماتسودا ، الرجل الذي كانت تحبه ، في سلسلة من التفجيرات قبل ثلاث سنوات.',
-    buttonText: 'مشاهدة',
+    title: 'Title',
+    subtitle: 'subtitle',
+    buttonText: 'Button',
 };
 
 //section--footer
