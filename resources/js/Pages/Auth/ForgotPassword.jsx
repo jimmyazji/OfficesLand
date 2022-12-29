@@ -21,7 +21,7 @@ export default function ForgotPassword({ status }) {
     };
 
     return (
-        <GuestLayout>
+        <GuestLayout className="bg-minorBackground">
             <Head title="Forgot Password" />
 
             <div className="mb-4 text-sm text-gray-500 leading-normal">
@@ -31,24 +31,26 @@ export default function ForgotPassword({ status }) {
 
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <form onSubmit={submit}>
-                <TextInput
-                    type="text"
-                    name="email"
-                    value={data.email}
-                    className="mt-1 block w-full"
-                    isFocused={true}
-                    handleChange={onHandleChange}
-                />
+            <div className="w-full max-w-md px-6 bg-minorBackground ">
+                <form onSubmit={submit}>
+                    <TextInput
+                        type="text"
+                        name="email"
+                        value={data.email}
+                        className="mt-1 block w-full"
+                        isFocused={true}
+                        handleChange={onHandleChange}
+                    />
 
-                <InputError message={errors.email} className="mt-2" />
+                    <InputError message={errors.email} className="mt-2" />
 
-                <div className="flex items-center justify-end mt-4">
-                    <PrimaryButton className="ml-4" processing={processing}>
-                        Email Password Reset Link
-                    </PrimaryButton>
-                </div>
-            </form>
+                    <div className="flex items-center justify-end mt-4">
+                        <PrimaryButton className="mx-auto" processing={processing}>
+                            Email Password Reset Link
+                        </PrimaryButton>
+                    </div>
+                </form>
+            </div>
         </GuestLayout>
     );
 }
