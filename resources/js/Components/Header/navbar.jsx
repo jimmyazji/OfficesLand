@@ -1,5 +1,6 @@
 import { Link } from '@inertiajs/inertia-react'
 import { useRef } from 'react'
+import { BiLogIn } from 'react-icons/bi'
 
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown';
@@ -14,7 +15,7 @@ export default function NavBar({ children }) {
 
 NavBar.Container = function NavBarContainer({ children }) {
     return (
-        <nav className='flex flex-row-reverse justify-between md:justify-start items-center h-[55px] md:h-[65px] lg:h-[75px] mx-4'>
+        <nav className='flex flex-row justify-between items-center h-14 md:h-16 lg:h-20 mx-4'>
             {children}
         </nav>
     )
@@ -37,7 +38,7 @@ NavBar.Logo = function NavBarLogo({ URL }) {
 
 NavBar.List = function NavBarList({ children }) {
     return (
-        <ul className='hidden md:flex flex-row-reverse items-center gap-4'>
+        <ul className='hidden md:flex flex-row items-center gap-8'>
             {children}
         </ul>
     )
@@ -53,17 +54,17 @@ NavBar.Item = function NavBarItem({ URL, children }) {
     )
 }
 
-// NavBar.Search = function NavBarSearch() {
-//     return (
-//         <div className='md:ml-4 mr-0 md:mr-auto cursor-pointer'>
-//             <GoSearch className='fill-white hover:fill-hover text-xl' />
-//         </div>
-//     )
-// }
+NavBar.Label = function NavBarLabel({ URL, children }) {
+    return (
+        <div className='flex flex-row'>
+            {children}
+        </div>
+    )
+}
 
 NavBar.SelectLang = function NavBarSelectLang({ URL, children }) {
     return (
-        <Dropdown className='hidden md:block md:mr-auto ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
+        <Dropdown className='hidden md:block ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
             <Dropdown.Trigger>
                 <span className="inline-flex ">
                     <button className="inline-flex items-center text-base px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
@@ -95,26 +96,15 @@ NavBar.SelectLang = function NavBarSelectLang({ URL, children }) {
     )
 }
 
-NavBar.LoginButton = function NavBarLoginButton({ URL, children }) {
+NavBar.LoginButton = function NavBarLoginButton({ URL }) {
     return (
         <div className='hidden md:block font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
             <Link href={URL}>
-                {children}
+                <BiLogIn />
             </Link>
         </div>
     )
 }
-
-NavBar.RegisterButton = function NavBarRegisterButton({ URL, children }) {
-    return (
-        <div className='hidden md:block text-base transition duration-300 text-accent  hover:text-primary'>
-            <Link href={URL}>
-                {children}
-            </Link>
-        </div>
-    )
-}
-
 
 NavBar.DashboardButton = function NavBarDashboardButton({ URL, children }) {
     return (
@@ -154,3 +144,24 @@ NavBar.Hamburger = function NavBarHamburger({ children, isSlideNavOpened, setIsS
         </button>
     )
 }
+
+
+
+// NavBar.Search = function NavBarSearch() {
+//     return (
+//         <div className='md:ml-4 mr-0 md:mr-auto cursor-pointer'>
+//             <GoSearch className='fill-white hover:fill-hover text-xl' />
+//         </div>
+//     )
+// }
+
+
+// NavBar.RegisterButton = function NavBarRegisterButton({ URL, children }) {
+//     return (
+//         <div className='hidden md:block text-base transition duration-300 text-accent  hover:text-primary'>
+//             <Link href={URL}>
+//                 {children}
+//             </Link>
+//         </div>
+//     )
+// }

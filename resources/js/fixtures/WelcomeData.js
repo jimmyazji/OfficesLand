@@ -1,14 +1,14 @@
 
 //section--header
 export const HeaderData = {
-    homeText: "الرئيسية",
-    aboutusText: "عن الشركة",
-    productsText: "المنتجات",
-    catalogText: "الكتالوج",
-    contactusText: "اتصل بنا",
-    signinText: "تسجيل الدخول",
-    registerText:"حساب جديد",
-    dashboardText: "لوحة التحكم",
+    homeText: "Home",
+    aboutusText: "About",
+    productsText: "Products",
+    catalogText: "Catalog",
+    contactusText: "Contact Us",
+    signinText: "Sign in",
+    registerText:"Register",
+    dashboardText: "Dashboard",
 };
 
 //section--hero

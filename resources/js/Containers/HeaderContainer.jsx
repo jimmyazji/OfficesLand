@@ -11,11 +11,8 @@ export default function HeaderContainer(props) {
             <Header.Container>
                 <NavBar>
                     <NavBar.Container>
-                        <NavBar.Hamburger
-                            isSlideNavOpened={isSlideNavOpened}
-                            setIsSlideNavOpened={setIsSlideNavOpened}
-                        />
                         <NavBar.Logo />
+
                         <NavBar.List>
                             <NavBar.Item URL={'/'}>{HeaderData.homeText}</NavBar.Item>
                             <NavBar.Item URL={'/about'}>{HeaderData.aboutusText}</NavBar.Item>
@@ -23,17 +20,23 @@ export default function HeaderContainer(props) {
                             <NavBar.Item URL={'/catalog'}>{HeaderData.catalogText}</NavBar.Item>
                             <NavBar.Item URL={'/contact'}>{HeaderData.contactusText}</NavBar.Item>
                         </NavBar.List>
-                        <NavBar.SelectLang />
-                        {props.auth.user
-                            ?
-                            <NavBar.DashboardButton URL={route('login')}>
-                                {HeaderData.dashboardText}
-                            </NavBar.DashboardButton>
-                            :
-                            <NavBar.LoginButton URL={route('dashboard')}>
-                                {HeaderData.signinText}
-                            </NavBar.LoginButton>
-                        }
+
+                        <NavBar.Label>
+                            <NavBar.SelectLang />
+                            {props.auth.user
+                                ?
+                                <NavBar.DashboardButton URL={route('login')}>
+                                    {HeaderData.dashboardText}
+                                </NavBar.DashboardButton>
+                                :
+                                <NavBar.LoginButton URL={route('dashboard')} />
+                            }
+                        </NavBar.Label>
+
+                        <NavBar.Hamburger
+                            isSlideNavOpened={isSlideNavOpened}
+                            setIsSlideNavOpened={setIsSlideNavOpened}
+                        />
                     </NavBar.Container>
                 </NavBar>
                 <SlideNav>
