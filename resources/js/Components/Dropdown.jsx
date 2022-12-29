@@ -84,9 +84,20 @@ const DropdownLink = ({ href, method = 'post', as = 'a', children, className }) 
         </Link>
     );
 };
+const Atag = ({ href, children, className }) => {
+    return (
+        <a
+            href={href}
+            className={`block w-full px-4 py-2 text-left text-sm leading-5 text-primary hover:bg-accent focus:outline-none focus:bg-gray-100 transition duration-150 ease-in-out ` + className}
+        >
+            {children}
+        </a>
+    );
+};
 
 Dropdown.Trigger = Trigger;
 Dropdown.Content = Content;
 Dropdown.Link = DropdownLink;
+Dropdown.Atag = Atag;
 
 export default Dropdown;
