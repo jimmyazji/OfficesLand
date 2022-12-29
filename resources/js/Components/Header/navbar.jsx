@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/inertia-react'
 import { useRef } from 'react'
 import { BiLogIn } from 'react-icons/bi'
+import { MdKeyboardArrowDown } from 'react-icons/md'
 
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown';
@@ -28,7 +29,7 @@ NavBar.Logo = function NavBarLogo({ URL }) {
             <div className='flex flex-row items-center'>
                 <ApplicationLogo className={"h-12 md:h-16 lg:h-20"} />
                 <div className='flex flex-col items-center'>
-                    <p className='text-base md:text-xl text-primary font-bold uppercase'> Offices Land</p>
+                    <p className='text-base md:text-lg lg:text-xl text-primary font-bold uppercase'> Offices Land</p>
                     <p className='hidden md:block text-xs text-accent font-semibold uppercase'>Your first choice</p>
                 </div>
             </div >
@@ -46,7 +47,7 @@ NavBar.List = function NavBarList({ children }) {
 
 NavBar.Item = function NavBarItem({ URL, children }) {
     return (
-        <li className='font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary cursor-pointer'>
+        <li className='font-semibold text-base lg:text-lg transition duration-150 text-accent hover:text-primary cursor-pointer'>
             <Link href={URL} >
                 {children}
             </Link>
@@ -56,7 +57,7 @@ NavBar.Item = function NavBarItem({ URL, children }) {
 
 NavBar.Label = function NavBarLabel({ URL, children }) {
     return (
-        <div className='flex flex-row'>
+        <div className='flex flex-row items-center gap-4'>
             {children}
         </div>
     )
@@ -64,33 +65,21 @@ NavBar.Label = function NavBarLabel({ URL, children }) {
 
 NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
     return (
-        <Dropdown className='hidden md:block ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
+        <Dropdown className='hidden md:block text-xs rounded-full transition bg-minorBackground text-accent'>
             <Dropdown.Trigger>
-                <span className="inline-flex ">
-                    <button className="inline-flex items-center text-base px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
-                        <svg
-                            className="mr-2 -ml-0.5 h-4 w-4"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path
-                                fillRule="evenodd"
-                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                            />
-                        </svg>
-                        ({locale})/ اللغة
-                    </button>
-                </span>
+                <button className="flex flex-row-reverse gap-1 items-center text-lg px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
+                    <MdKeyboardArrowDown />
+                    {locale}
+                </button>
             </Dropdown.Trigger>
 
             <Dropdown.Content align='right' width='w-40' className="bg-minorBackground mt-3">
-                <Dropdown.Link href={route('logout')} className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
-                    العربية
-                </Dropdown.Link>
-                <Dropdown.Link href={route('logout')} className="text-right text-accent hover:bg-majorBackground">
-                    English
-                </Dropdown.Link>
+                <Dropdown.Atag href="locale/ar" className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
+                    ar
+                </Dropdown.Atag>
+                <Dropdown.Atag href="locale/en" className="text-right text-accent hover:bg-majorBackground">
+                    en
+                </Dropdown.Atag>
             </Dropdown.Content>
         </Dropdown>
     )
@@ -98,11 +87,11 @@ NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
 
 NavBar.LoginButton = function NavBarLoginButton({ URL }) {
     return (
-        <div className='hidden md:block font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
+        <button className='hidden md:block' >
             <Link href={URL}>
-                <BiLogIn />
+                <BiLogIn className='text-2xl transition duration-150 text-accent hover:text-primary' />
             </Link>
-        </div>
+        </button>
     )
 }
 
