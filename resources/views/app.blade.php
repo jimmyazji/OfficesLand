@@ -15,7 +15,7 @@
         @vite('resources/js/app.jsx')
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
         @inertia
     </body>
 </html>
