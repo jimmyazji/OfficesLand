@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { ContactUs, SendUs, Address } from '../Components'
 
 export default function ContactUsContainer() {
-    const [contactUsData, setContectUsData] = useState({
+    const [contactUsData, setContctUsData] = useState({
         name: '',
         phone: '',
         country: {},
@@ -18,12 +18,12 @@ export default function ContactUsContainer() {
     const onChangeForm = function (e, name, phoneValue, phoneCountry, phoneFormattedValue) {
         if (name != "phone") {
             const { value } = e.target
-            setContectUsData({
+            setContctUsData({
                 ...contactUsData,
                 [name]: value
             })
         } else {
-            setContectUsData({
+            setContctUsData({
                 ...contactUsData,
                 phone: phoneValue,
                 country: phoneCountry,
@@ -44,12 +44,12 @@ export default function ContactUsContainer() {
                                 name={"name"}
                                 value={contactUsData.name}
                                 onChange={onChangeForm} />
-                            <SendUs.Phone
+                            {/* <SendUs.Phone
                                 type={"phone"}
                                 label={"Phone"}
                                 name={"phone"}
                                 value={contactUsData.phone}
-                                onChange={onChangeForm} />
+                                onChange={onChangeForm} /> */}
                             <SendUs.Input
                                 type={"email"}
                                 label={"Email"}
