@@ -22,7 +22,7 @@ export default function HeaderContainer(props) {
                         </NavBar.List>
 
                         <NavBar.Label>
-                            <NavBar.SelectLang />
+                            <NavBar.SelectLang locale={props.locale} />
                             {props.auth.user
                                 ?
                                 <NavBar.DashboardButton URL={route('login')}>

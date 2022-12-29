@@ -62,7 +62,7 @@ NavBar.Label = function NavBarLabel({ URL, children }) {
     )
 }
 
-NavBar.SelectLang = function NavBarSelectLang({ URL, children }) {
+NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
     return (
         <Dropdown className='hidden md:block ml-4 text-xs rounded-full transition bg-minorBackground text-accent'>
             <Dropdown.Trigger>
@@ -79,16 +79,16 @@ NavBar.SelectLang = function NavBarSelectLang({ URL, children }) {
                                 clipRule="evenodd"
                             />
                         </svg>
-                        (العربية)/ اللغة
+                        ({locale})/ اللغة
                     </button>
                 </span>
             </Dropdown.Trigger>
 
             <Dropdown.Content align='right' width='w-40' className="bg-minorBackground mt-3">
-                <Dropdown.Link href={route('logout')} method="post" as="button" className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
+                <Dropdown.Link href={route('logout')} className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
                     العربية
                 </Dropdown.Link>
-                <Dropdown.Link href={route('logout')} method="post" as="button" className="text-right text-accent hover:bg-majorBackground">
+                <Dropdown.Link href={route('logout')} className="text-right text-accent hover:bg-majorBackground">
                     English
                 </Dropdown.Link>
             </Dropdown.Content>
