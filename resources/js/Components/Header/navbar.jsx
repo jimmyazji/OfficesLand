@@ -70,7 +70,7 @@ NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
             <Dropdown.Trigger>
                 <button className="flex flex-row-reverse gap-1 items-center text-lg px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
                     <MdKeyboardArrowDown />
-                    {locale == "ar" ? "العربية" : "English"}
+                    {locale == "en" ? "English" : "العربية"}
                 </button>
             </Dropdown.Trigger>
 
