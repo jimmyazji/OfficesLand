@@ -16,19 +16,11 @@ export default function ContactUsContainer() {
     }
 
     const onChangeForm = function (e, name, phoneValue, phoneCountry, phoneFormattedValue) {
-        if (name != "phone") {
-            const { value } = e.target
-            setContctUsData({
-                ...contactUsData,
-                [name]: value
-            })
-        } else {
-            setContctUsData({
-                ...contactUsData,
-                phone: phoneValue,
-                country: phoneCountry,
-            })
-        }
+        const { value } = e.target
+        setContctUsData({
+            ...contactUsData,
+            [name]: value
+        })
     }
 
     return (
@@ -43,6 +35,12 @@ export default function ContactUsContainer() {
                                 label={"Name"}
                                 name={"name"}
                                 value={contactUsData.name}
+                                onChange={onChangeForm} />
+                            <SendUs.Input
+                                type={"text"}
+                                label={"Phone"}
+                                name={"phone"}
+                                value={contactUsData.phone}
                                 onChange={onChangeForm} />
                             {/* <SendUs.Phone
                                 type={"phone"}

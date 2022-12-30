@@ -2,7 +2,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 export default function Info({ children }) {
     return (
-        <div className="z-20 w-full h-full flex flex-col justify-center items-start max-w-7xl mx-auto">
+        <div className="flex justify-start items-end h-full max-w-7xl mx-auto">
             {children}
         </div>
     )
@@ -10,7 +10,7 @@ export default function Info({ children }) {
 
 Info.Container = function InfoContainer({ children }) {
     return (
-        <div className="">
+        <div className="z-10 text-left mx-4 mb-16 md:mb-40">
             {children}
         </div>
     )
@@ -18,7 +18,7 @@ Info.Container = function InfoContainer({ children }) {
 
 Info.Title = function InfoTitle({ children }) {
     return (
-        <p className="mb-4 font-bold text-lg md:text-2xl lg:text-4xl text-primary text-right text-shadow-dark">
+        <p className="font-extrabold text-lg md:text-2xl lg:text-4xl text-primary text-shadow-dark">
             {children}
         </p>
     )
@@ -26,7 +26,7 @@ Info.Title = function InfoTitle({ children }) {
 
 Info.SubTitle = function InfoSubtitle({ children }) {
     return (
-        <p className='mb-4 hidden md:block text-xs md:text-sm lg:text-lg text-right text-accent'>
+        <p className='mt-4 block text-sm md:text-lg lg:text-2xl text-accent'>
             {children}
         </p>
     )
@@ -35,8 +35,10 @@ Info.SubTitle = function InfoSubtitle({ children }) {
 Info.Button = function InfoButton({ slide_id, children }) {
     return (
         <Link href={`/products/${slide_id}`}>
-            <button className='w-20 h-8 bg-minorBackground text-accent rounded-lg hover:opacity-50'>
-                {children}
+            <button className='mt-12 px-4 py-1 bg-minorBackground rounded-lg hover:opacity-50'>
+                <p className='text-xs md:text-base lg:text-lg text-accent '>
+                    {children}
+                </p>
             </button>
         </Link>
     )

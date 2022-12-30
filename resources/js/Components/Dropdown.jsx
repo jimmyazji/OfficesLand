@@ -30,15 +30,15 @@ const Trigger = ({ children }) => {
     );
 };
 
-const Content = ({ align = 'right', width = '48', className = 'py-1 bg-white', children }) => {
+const Content = ({ align = '', width = '48', className = '', children }) => {
     const { open, setOpen } = useContext(DropDownContext);
 
     let alignmentClasses = 'origin-top';
 
     if (align === 'left') {
-        alignmentClasses = 'origin-top-left left-0';
+        alignmentClasses = 'left-0';
     } else if (align === 'right') {
-        alignmentClasses = 'origin-top-right right-0';
+        alignmentClasses = 'right-0';
     }
 
     let widthClasses = '';

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ApplicationLogo({ className }) {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="100 100 400 400" className={className}>
+        <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="140 140 320 320" className={className}>
             <path fill="#848c99" stroke="#000" strokeMiterlimit="10" strokeWidth=".5"
                 d="M429.7 321.3a18.2 18.2 0 0 0 21.6-17.2l.1-6.5c0-87.2-72.2-157.9-159.6-154.6-85.3 3.2-152.7 78.3-147.7 164a153.7 153.7 0 0 0 30.8 84 155.6 155.6 0 0 0 59.1 47.5 18.2 18.2 0 0 0 25-11.3 18.2 18.2 0 0 0-9.6-21.8 119 119 0 0 1-69.2-107.8 118 118 0 0 1 118.6-118.1c63.1.6 115 52.3 116.2 115.8v7.5a18.1 18.1 0 0 0 14.7 18.5Z" />
             <path fill="#234182" stroke="#000" strokeMiterlimit="10" strokeWidth=".5"

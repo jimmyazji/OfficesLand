@@ -2,7 +2,7 @@ import slideImage from '../../../assets/products/1.jpg'
 
 export default function Hero({ children }) {
     return (
-        <section className='bg-minorBackground w-full -mt-20'>
+        <section className='bg-minorBackground w-full h-full -mt-20'>
             {children}
         </section>
     )
@@ -10,7 +10,7 @@ export default function Hero({ children }) {
 
 Hero.Container = function HeroContainer({ children }) {
     return (
-        <div className={`relative flex flex-col justify-center items-start md:h-[700px] h-96`}>
+        <div className={`relative w-full h-[400px] md:h-[700px] `}>
             {children}
         </div>
     )

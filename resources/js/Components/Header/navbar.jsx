@@ -2,6 +2,7 @@ import { Link } from '@inertiajs/inertia-react'
 import { useRef } from 'react'
 import { BiLogIn } from 'react-icons/bi'
 import { MdKeyboardArrowDown } from 'react-icons/md'
+import { FaSolarPanel } from 'react-icons/fa'
 
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown';
@@ -27,7 +28,7 @@ NavBar.Logo = function NavBarLogo({ URL }) {
     return (
         <Link href={URL} >
             <div className='flex flex-row items-center'>
-                <ApplicationLogo className={"h-12 md:h-16 lg:h-20"} />
+                <ApplicationLogo className="ltr:mr-3 rtl:ml-3 h-10 md:h-12 lg:h-16" />
                 <div className='flex flex-col items-center'>
                     <p className='text-base md:text-lg lg:text-xl text-primary font-bold uppercase'> Offices Land</p>
                     <p className='hidden md:block text-xs text-accent font-semibold uppercase'>Your first choice</p>
@@ -69,16 +70,16 @@ NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
             <Dropdown.Trigger>
                 <button className="flex flex-row-reverse gap-1 items-center text-lg px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
                     <MdKeyboardArrowDown />
-                    {locale}
+                    {locale == "ar" ? "العربية" : "English"}
                 </button>
             </Dropdown.Trigger>
 
-            <Dropdown.Content align='right' width='w-40' className="bg-minorBackground mt-3">
+            <Dropdown.Content align='left' width='w-40' className="bg-minorBackground mt-3 ltr:left-0 rtl:right-0">
                 <Dropdown.Atag href="locale/ar" className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
-                    ar
+                    العربية
                 </Dropdown.Atag>
                 <Dropdown.Atag href="locale/en" className="text-right text-accent hover:bg-majorBackground">
-                    en
+                    English
                 </Dropdown.Atag>
             </Dropdown.Content>
         </Dropdown>
@@ -95,11 +96,11 @@ NavBar.LoginButton = function NavBarLoginButton({ URL }) {
     )
 }
 
-NavBar.DashboardButton = function NavBarDashboardButton({ URL, children }) {
+NavBar.DashboardButton = function NavBarDashboardButton({ URL }) {
     return (
         <div className='hidden md:block font-semibold text-sm lg:text-base transition duration-150 text-accent hover:text-primary'>
             <Link href={URL}>
-                {children}
+                <FaSolarPanel className='text-2xl transition duration-150 text-accent hover:text-primary' />
             </Link>
         </div>
     )
