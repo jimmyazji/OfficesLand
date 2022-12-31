@@ -1,5 +1,6 @@
 import { Link } from '@inertiajs/inertia-react'
 import Dropdown from '@/Components/Dropdown';
+import { useLaravelReactI18n } from 'laravel-react-i18n'
 
 export default function SlideNav({ children }) {
     return (
@@ -47,6 +48,7 @@ SlideNav.Item = function SlideNavItem({ URL, children }) {
 }
 
 SlideNav.SelectLang = function SlideNavSelectLang({ URL, children }) {
+    const { t } = useLaravelReactI18n()
     return (
         <li className='flex flex-row justify-between w-full mt-4 px-2 py-2 bg-majorBackground rounded-lg'>
             <Dropdown className='w-full text-sm text-accent '>
@@ -64,7 +66,7 @@ SlideNav.SelectLang = function SlideNavSelectLang({ URL, children }) {
                             />
                         </svg>
                         <p>Ar</p>
-                        <p className='ml-auto'>اللغة</p>
+                        <p className='ml-auto'>{t('language')}</p>
                     </button>
                 </Dropdown.Trigger>
 
