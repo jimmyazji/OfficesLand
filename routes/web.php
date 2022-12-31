@@ -4,6 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use Illuminate\Foundation\Application;
 
 Route::get('locale/{locale}', function ($locale) {
     App::setLocale($locale);
-    session()->put('locale', $locale);
+    Session::put('locale', $locale);
     return redirect()->back();
 })->name('locale');
 Route::get('/', function () {
