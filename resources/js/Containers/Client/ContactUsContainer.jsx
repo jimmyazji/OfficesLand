@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ContactUs, SendUs, Address } from '../Components'
+import { ContactUs, SendUs, Address } from '@/Components/Client'
 
 export default function ContactUsContainer() {
     const [contactUsData, setContctUsData] = useState({

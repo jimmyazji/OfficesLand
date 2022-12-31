@@ -30,13 +30,16 @@ module.exports = {
         extend: {
             colors: {
                 primary: '#224284',
-                accent: '#858d9a',
-                minorBackground: '#1B1C24',
-                majorBackground:'#15161C',
-                hover: '#8F1F20',
+                accent: '#c4c8cb',
+                minorBackground: '#161b21',
+                majorBackground:'#0d1017',
+                hover: '#20262d',
             },
         },
     },
     plugins: [require('@tailwindcss/forms')],
     
 };
+
+
+// https://cdn.dribbble.com/userupload/4099006/file/original-14c216da048113575622eec90ad982dd.png?compress=1&resize=752x

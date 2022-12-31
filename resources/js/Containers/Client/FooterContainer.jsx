@@ -1,4 +1,4 @@
-import { Footer, SocialMedia, CopyRight } from '../Components'
+import { Footer, SocialMedia, CopyRight } from '@/Components/Client'
 
 export default function FooterContainer() {
     return (

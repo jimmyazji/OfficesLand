@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { NavBar, SlideNav, Header } from '../Components'
+import { NavBar, SlideNav, Header } from '@/Components/Client'
 
-import { HeaderData } from '../fixtures/WelcomeData'
+import { HeaderData } from '@/fixtures/WelcomeData'
 
 export default function HeaderContainer(props) {
     const [isSlideNavOpened, setIsSlideNavOpened] = useState(false)

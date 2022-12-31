@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/inertia-react'
 import { FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaTiktok } from 'react-icons/fa'
-import Full_logo from '../../../assets/full_logo.png'
+import Full_logo from '@/../assets/full_logo.png'
 
 export default function SocialMedia({ children }) {
     return (

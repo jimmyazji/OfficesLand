@@ -1,5 +1,7 @@
-import { Hero, Info } from '../Components'
-import {HeroData} from '../fixtures/WelcomeData'
+import { Hero, Info } from '@/Components/Client'
+
+import { HeroData } from '@/fixtures/WelcomeData'
+
 export default function HeroContainer({ slide_id }) {
     return (
         <Hero>

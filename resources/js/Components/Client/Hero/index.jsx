@@ -1,4 +1,4 @@
-import slideImage from '../../../assets/products/1.jpg'
+import slideImage from '@/../assets/products/1.jpg'
 
 export default function Hero({ children }) {
     return (
