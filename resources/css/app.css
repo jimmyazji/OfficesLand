@@ -15,3 +15,9 @@
 .text-shadow-dark {
     text-shadow: #1b1c24 2px 2px 2px;
 }
+
+.box-shadow-inset-r-dark {
+    box-shadow: -68px 0px 81px 28px rgba(13, 16, 23, 0.76) inset;
+    -webkit-box-shadow: -68px 0px 81px 28px rgba(13, 16, 23, 0.76) inset;
+    -moz-box-shadow: -68px 0px 81px 28px rgba(13, 16, 23, 0.76) inset;
+}
