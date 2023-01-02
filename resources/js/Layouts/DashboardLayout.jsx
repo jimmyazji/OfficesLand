@@ -1,8 +1,9 @@
 import { Head } from '@inertiajs/inertia-react';
 import { Header } from '@/Components/Dashboard';
 import { useState } from 'react';
+import Sidebar from '@/Layouts/Sidebar';
 
-export default function Dashboard(props, { children }) {
+export default function DashboardLayout({ children }) {
     const [isSidebarOpened, setIsSidebarOpened] = useState(true)
 
     return (
@@ -12,7 +13,7 @@ export default function Dashboard(props, { children }) {
 
                 {isSidebarOpened ?
                     <aside className='z-10 min-h-screen w-2/4 md:w-1/3 bg-minorBackground box-shadow-inset-r-dark'>
-                        <SidebarContainer />
+                        <Sidebar />
                     </aside>
                     : null
                 }
@@ -21,7 +22,7 @@ export default function Dashboard(props, { children }) {
                     <Header>
                         <Header.Container>
                             <Header.Hamburger isSidebarOpened={isSidebarOpened} setIsSidebarOpened={setIsSidebarOpened} />
-                            <Header.Dropdown  {...props} />
+                            <Header.Dropdown />
                         </Header.Container>
                     </Header>
 

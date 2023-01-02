@@ -1,12 +1,7 @@
-import DashboardLayout from '@/Layouts/DashboardLayout'
 
-export default function UsersContainer({ auth }) {
+export default function Users({ auth }) {
 
     return (
-        <div>
-            <DashboardLayout>
-                UsersContainer
-            </DashboardLayout>
-        </div>
+        <Users.layout children={<h1 className="text-white text-9xl">test</h1>} />
     )
 }
