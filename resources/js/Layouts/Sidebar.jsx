@@ -11,15 +11,15 @@ export default function HeaderContainer() {
             <Sidebar.Body>   
                 <Sidebar.List>
                     <Sidebar.Title>Menu</Sidebar.Title>
-                    <Sidebar.Item URL={'/dashboard/users'}>
+                    <Sidebar.Item URL={route('users.index')}>
                         <BiUser />
                         <p>Users</p>
                     </Sidebar.Item>
-                    <Sidebar.Item URL={'/dashboard/products'}>
+                    <Sidebar.Item URL={route('products.index')}>
                         <MdProductionQuantityLimits />
                         <p>Products</p>
                     </Sidebar.Item>
-                    <Sidebar.Item URL={'/dashboard/partners'}>
+                    <Sidebar.Item URL={route('users.index')}>
                         <HiUserGroup />
                         <p>Partners</p>
                     </Sidebar.Item>

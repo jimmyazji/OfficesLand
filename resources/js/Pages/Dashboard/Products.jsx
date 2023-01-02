@@ -1,11 +1,11 @@
-import DashboardLayout from '@/Layouts/DashboardLayout'
+import DashboardLayout from "@/Layouts/DashboardLayout"
 
-export default function ProductsContainer() {
+const Products = (props) => {
+    console.log('products')
     return (
-        <div>
-            <DashboardLayout>
-                ProductsContainer
-            </DashboardLayout>
-        </div>
+        <div>Hello products</div>
     )
 }
+Products.layout = page => <DashboardLayout props={page.props} children={page} title="Products" />
+
+export default Products

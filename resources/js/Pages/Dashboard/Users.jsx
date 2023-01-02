@@ -1,6 +1,8 @@
 import DashboardLayout from "@/Layouts/DashboardLayout"
 
 const Users = (props) => {
+    console.log('users')
+
     return (
         <div>Hello {props.auth.user.name}</div>
     )

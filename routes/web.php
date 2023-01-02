@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\App;
@@ -38,5 +39,6 @@ Route::get('/', function () {
 
 Route::prefix('dashboard')->group(function () {
     Route::resource('users', UserController::class)->middleware(['auth', 'verified']);
+    Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
 });
 require __DIR__ . '/auth.php';
