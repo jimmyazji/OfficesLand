@@ -1,7 +1,10 @@
+import DashboardLayout from "@/Layouts/DashboardLayout"
 
-export default function Users({ auth }) {
-
+const Users = (props) => {
     return (
-        <Users.layout children={<h1 className="text-white text-9xl">test</h1>} />
+        <div>Hello {props.auth.user.name}</div>
     )
 }
+Users.layout = page => <DashboardLayout props={page.props} children={page} title="Users" />
+
+export default Users

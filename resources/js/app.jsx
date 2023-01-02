@@ -17,11 +17,10 @@ createInertiaApp({
         const page = resolvePageComponent(
             `./Pages/${name}.jsx`,
             import.meta.glob('./Pages/**/*.jsx'),
-            DashboardLayout
         );
 
         page.then((module) => {
-            if (name.startsWith('Dashboard')) module.default.layout = DashboardLayout;
+            if (name.startsWith('Dashboard')) module = <DashboardLayout children={page}/>;
         });
 
         return page

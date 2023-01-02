@@ -20,7 +20,7 @@ Header.Container = function HeaderContainer({ children }) {
     )
 }
 
-Header.Dropdown = function HeaderDropdown({ children }) {
+Header.Dropdown = function HeaderDropdown({ auth }) {
     return (
         <Dropdown className={""}>
             <Dropdown.Trigger>
@@ -33,7 +33,7 @@ Header.Dropdown = function HeaderDropdown({ children }) {
             </Dropdown.Trigger>
 
             <Dropdown.Content align='right' className='bg-minorBackground rounded-b-md border-t-2 border-accent'>
-                {/* <p className='text-gray-500 cursor-text text-right p-2'> {auth.user.name}</p> */}
+                <p className='text-gray-500 cursor-text text-right p-2'> {auth.user.name}</p>
                 <Dropdown.Link href={route('logout')} method="post" as="button" className={"text-right rounded-b-md text-accent hover:bg-majorBackground"}>
                     Log Out
                 </Dropdown.Link>
