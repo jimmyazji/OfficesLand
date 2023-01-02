@@ -23,7 +23,6 @@
     },
     "dependencies": {
         "laravel-react-i18n": "^1.0.4",
-        "react-icons": "^4.7.1",
-        "react-router-dom": "^6.6.1"
+        "react-icons": "^4.7.1"
     }
 }
