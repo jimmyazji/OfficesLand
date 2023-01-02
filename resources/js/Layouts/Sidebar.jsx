@@ -9,21 +9,17 @@ export default function HeaderContainer() {
     return (
         <Sidebar>
             <Sidebar.Header />
-            <Sidebar.Body>
-                
+            <Sidebar.Body>   
                 <Sidebar.List>
                     <Sidebar.Title>Menu</Sidebar.Title>
-                     {/* router */}
                     <Sidebar.Item URL={'/dashboard/users'}>
                         <BiUser />
                         <p>Users</p>
                     </Sidebar.Item>
-                     {/* router */}
                     <Sidebar.Item URL={'/dashboard/products'}>
                         <MdProductionQuantityLimits />
                         <p>Products</p>
                     </Sidebar.Item>
-                     {/* router */}
                     <Sidebar.Item URL={'/dashboard/partners'}>
                         <HiUserGroup />
                         <p>Partners</p>

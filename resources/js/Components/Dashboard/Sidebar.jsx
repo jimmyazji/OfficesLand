@@ -1,4 +1,5 @@
 import ApplicationLogo from '@/Components/ApplicationLogo'
+import { Link } from '@inertiajs/inertia-react'
 
 export default function Sidebar({ children }) {
     return (
@@ -43,8 +44,10 @@ Sidebar.Title = function SidebarTitle({ children }) {
 
 Sidebar.Item = function SidebarItem({ URL, children }) {
     return (
-        <li className='flex flex-row items-center gap-2 text-sm md:text-base lg:text-lg text-accent cursor-pointer py-3 px-6 hover:bg-majorBackground '>
-            {children}
-        </li>
+        <Link href={URL}>
+            <li className='flex flex-row items-center gap-2 text-sm md:text-base lg:text-lg text-accent cursor-pointer py-3 px-6 hover:bg-majorBackground '>
+                {children}
+            </li>
+        </Link>
     )
 }

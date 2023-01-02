@@ -1,10 +1,8 @@
 import { Head } from '@inertiajs/inertia-react';
-import { SidebarContainer, UsersContainer, ProductsContainer, PartnersContainer } from '@/Containers/Dashboard'
 import { Header } from '@/Components/Dashboard';
 import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-export default function Dashboard(props) {
+export default function Dashboard(props, { children }) {
     const [isSidebarOpened, setIsSidebarOpened] = useState(true)
 
     return (
@@ -26,18 +24,11 @@ export default function Dashboard(props) {
                             <Header.Dropdown  {...props} />
                         </Header.Container>
                     </Header>
-                    
-                    {/* router */}
-                    <BrowserRouter>
-                        <Routes>
-                            <Route path='/dashboard' element={<h1>index</h1>} />
-                            <Route path='/dashboard/users' element={<UsersContainer />} />
-                            <Route path='/dashboard/products' element={<ProductsContainer />} />
-                            <Route path='/dashboard/partners' element={<ProductsContainer />} />
-                        </Routes>
-                    </BrowserRouter>
+
+                    {children}
                 </main>
             </div>
         </>
     );
 }
+

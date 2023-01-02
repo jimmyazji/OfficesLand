@@ -65,6 +65,8 @@ NavBar.Label = function NavBarLabel({ URL, children }) {
 }
 
 NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
+    
+
     return (
         <Dropdown className='hidden md:block text-xs rounded-full transition bg-minorBackground text-accent'>
             <Dropdown.Trigger>

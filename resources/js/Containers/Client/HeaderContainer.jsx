@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import { NavBar, SlideNav, Header } from '@/Components/Client'
 
 import { HeaderData } from '@/fixtures/WelcomeData'
+import { useLaravelReactI18n } from 'laravel-react-i18n'
 
 export default function HeaderContainer(props) {
     const [isSlideNavOpened, setIsSlideNavOpened] = useState(false)
+    const { t, tChoice } = useLaravelReactI18n()
+    console.log(t('Welcome :home!', { home: 'home' }))
 
     return (
         <Header>
