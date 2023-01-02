@@ -1,11 +1,10 @@
-import DashboardLayout from '@/Layouts/DashboardLayout'
+import DashboardLayout from "@/Layouts/DashboardLayout"
 
-export default function PartnersContainer() {
+const Partners = (props) => {
     return (
-        <div>
-            <DashboardLayout>
-                PartnersContainer
-            </DashboardLayout>
-        </div>
+        <div>Hello Partners</div>
     )
 }
+Partners.layout = page => <DashboardLayout props={page.props} children={page} title="Partners" />
+
+export default Partners
