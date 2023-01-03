@@ -11,7 +11,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo';
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
-        email: '',
+        login: '',
         password: '',
         remember: '',
     });
@@ -44,17 +44,17 @@ export default function Login({ status, canResetPassword }) {
                 <div className="w-full max-w-md mt-6 p-6 bg-minorBackground rounded-lg md:shadow-xl shadow-majorBackground md:border-2 border-majorBackground">
                     <form onSubmit={submit} >
                         <div>
-                            <InputLabel forInput="email" value="Email" />
+                            <InputLabel forInput="login" value="Email or Username" />
                             <TextInput
                                 type="text"
-                                name="email"
-                                value={data.email}
+                                name="login"
+                                value={data.login}
                                 className="mt-1 block w-full"
                                 autoComplete="username"
                                 isFocused={true}
                                 handleChange={onHandleChange}
                             />
-                            <InputError message={errors.email} className="mt-2" />
+                            <InputError message={errors.login} className="mt-2" />
                         </div>
 
                         <div className="mt-4">

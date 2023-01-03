@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Session;
 
 class SetLocale
 {
-    
+
     public function handle(Request $request, Closure $next)
     {
         if (Session::has('locale')) {
             App::setLocale(Session::get('locale'));
-        }
+        } else (Session::put('locale', App::getLocale()));
         return $next($request);
     }
 }
