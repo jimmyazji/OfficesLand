@@ -8,7 +8,9 @@ import { Head, Link, useForm } from '@inertiajs/inertia-react';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
-        name: '',
+        username: '',
+        first_name: '',
+        last_name: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -35,14 +37,46 @@ export default function Register() {
             <Head title="Register" />
 
             <div className="w-full max-w-md mt-6 px-6 py-4 bg-minorBackground shadow-xl shadow-majorBackground rounded-lg border-2 border-majorBackground">
-                <form onSubmit={submit}>
+                <form className='space-y-4' onSubmit={submit}>
                     <div>
-                        <InputLabel forInput="name" value="Name" />
+                        <InputLabel forInput="username" value="Username*" />
 
                         <TextInput
                             type="text"
-                            name="name"
-                            value={data.name}
+                            name="username"
+                            value={data.username}
+                            className="mt-1 block w-full"
+                            autoComplete="username"
+                            isFocused={true}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                        <InputError message={errors.username} className="mt-2" />
+                    </div>
+                    <div>
+                        <InputLabel forInput="first_name" value="First name" />
+
+                        <TextInput
+                            type="text"
+                            name="first_name"
+                            value={data.first_name}
+                            className="mt-1 block w-full"
+                            autoComplete="first_name"
+                            isFocused={true}
+                            handleChange={onHandleChange}
+                            required
+                        />
+
+                        <InputError message={errors.first_name} className="mt-2" />
+                    </div>
+                    <div>
+                        <InputLabel forInput="last_name" value="Last name" />
+
+                        <TextInput
+                            type="text"
+                            name="last_name"
+                            value={data.last_name}
                             className="mt-1 block w-full"
                             autoComplete="name"
                             isFocused={true}
@@ -50,10 +84,10 @@ export default function Register() {
                             required
                         />
 
-                        <InputError message={errors.name} className="mt-2" />
+                        <InputError message={errors.last_name} className="mt-2" />
                     </div>
 
-                    <div className="mt-4">
+                    <div>
                         <InputLabel forInput="email" value="Email" />
 
                         <TextInput
@@ -69,8 +103,8 @@ export default function Register() {
                         <InputError message={errors.email} className="mt-2" />
                     </div>
 
-                    <div className="mt-4">
-                        <InputLabel forInput="password" value="Password" />
+                    <div>
+                        <InputLabel forInput="password" value="Password*" />
 
                         <TextInput
                             type="password"
@@ -85,8 +119,8 @@ export default function Register() {
                         <InputError message={errors.password} className="mt-2" />
                     </div>
 
-                    <div className="mt-4">
-                        <InputLabel forInput="password_confirmation" value="Confirm Password" />
+                    <div>
+                        <InputLabel forInput="password_confirmation" value="Confirm Password*" />
 
                         <TextInput
                             type="password"
