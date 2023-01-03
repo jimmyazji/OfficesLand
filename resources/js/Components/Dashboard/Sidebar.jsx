@@ -12,7 +12,7 @@ export default function Sidebar({ children }) {
     )
 }
 
-Sidebar.Header = function SidebarHeader({onclick}) {
+Sidebar.Header = function SidebarHeader({ onclick }) {
     return (
         <div className='flex flex-col items-center pt-20 justify-center gap-2'>
             <MdClose className='absolute top-5 left-5 text-4xl text-primary cursor-pointer' onClick={onclick} />
@@ -47,9 +47,9 @@ Sidebar.Title = function SidebarTitle({ children }) {
     )
 }
 
-Sidebar.Item = function SidebarItem({ URL, children }) {
+Sidebar.Item = function SidebarItem({ URL, children, onclick }) {
     return (
-        <Link href={URL}>
+        <Link href={URL} onClick={onclick}>
             <li className='flex flex-row items-center gap-2 text-sm md:text-base lg:text-lg text-accent cursor-pointer py-3 px-6 hover:bg-majorBackground '>
                 {children}
             </li>

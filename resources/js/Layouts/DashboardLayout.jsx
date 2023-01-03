@@ -30,15 +30,15 @@ export default function Dashboard({ props, children }) {
                         <Sidebar.Body>
                             <Sidebar.List>
                                 <Sidebar.Title>Menu</Sidebar.Title>
-                                <Sidebar.Item URL={route('dashboard.users.index')}>
+                                <Sidebar.Item onclick={() => setIsSidebarOpened(!isSidebarOpened)} URL={route('dashboard.users.index')}>
                                     <Sidebar.UserLogo />
                                     <Sidebar.Label name='Users' />
                                 </Sidebar.Item>
-                                <Sidebar.Item URL={route('dashboard.products.index')}>
+                                <Sidebar.Item onclick={() => setIsSidebarOpened(!isSidebarOpened)} URL={route('dashboard.products.index')}>
                                     <Sidebar.ProductLogo />
                                     <Sidebar.Label name='Products' />
                                 </Sidebar.Item>
-                                <Sidebar.Item URL={route('dashboard.partners.index')}>
+                                <Sidebar.Item onclick={() => setIsSidebarOpened(!isSidebarOpened)} URL={route('dashboard.partners.index')}>
                                     <Sidebar.PartnerLogo />
                                     <Sidebar.Label name='Partners' />
                                 </Sidebar.Item>
