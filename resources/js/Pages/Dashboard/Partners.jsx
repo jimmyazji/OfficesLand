@@ -1,6 +1,8 @@
 import DashboardLayout from "@/Layouts/DashboardLayout"
 
 const Partners = (props) => {
+    console.log("partners")
+
     return (
         <div>Hello Partners</div>
     )

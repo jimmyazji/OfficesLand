@@ -1,6 +1,9 @@
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import { Link } from '@inertiajs/inertia-react'
-
+import { BiUser } from 'react-icons/bi'
+import { MdProductionQuantityLimits } from 'react-icons/md'
+import { HiUserGroup } from 'react-icons/hi'
+import { MdClose } from 'react-icons/md'
 export default function Sidebar({ children }) {
     return (
         <div className='w-full h-full'>
@@ -9,14 +12,16 @@ export default function Sidebar({ children }) {
     )
 }
 
-Sidebar.Header = function SidebarHeader() {
+Sidebar.Header = function SidebarHeader({onclick}) {
     return (
-        <div className='flex flex-col items-center pt-10 justify-center gap-2'>
+        <div className='flex flex-col items-center pt-20 justify-center gap-2'>
+            <MdClose className='absolute top-5 left-5 text-4xl text-primary cursor-pointer' onClick={onclick} />
             <ApplicationLogo className="h-14 md:h-16 lg:h-24" />
             <p className='text-lg md:text-xl lg:text-2xl text-primary font-bold uppercase'> Offices Land</p>
         </div>
     )
 }
+
 
 Sidebar.Body = function SidebarBody({ children }) {
     return (
@@ -49,5 +54,31 @@ Sidebar.Item = function SidebarItem({ URL, children }) {
                 {children}
             </li>
         </Link>
+    )
+}
+
+Sidebar.Label = function SidebarLabel({ name }) {
+    return (
+        <p >
+            {name}
+        </p>
+    )
+}
+
+Sidebar.UserLogo = function SidebarUserLogo() {
+    return (
+        <BiUser />
+    )
+}
+
+Sidebar.ProductLogo = function SidebarProductLogo() {
+    return (
+        <MdProductionQuantityLimits />
+    )
+}
+
+Sidebar.PartnerLogo = function SidebarPartnerLogo() {
+    return (
+        <HiUserGroup />
     )
 }

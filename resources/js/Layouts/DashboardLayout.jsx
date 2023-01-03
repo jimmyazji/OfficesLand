@@ -1,21 +1,18 @@
 import { Head } from '@inertiajs/inertia-react';
 import { Header } from '@/Components/Dashboard';
 import { useState } from 'react';
-import Sidebar from '@/Layouts/Sidebar';
+import { Sidebar } from '@/Components/Dashboard'
+
 
 export default function Dashboard({ props, children }) {
+    console.log("dashboard layout")
+
     const [isSidebarOpened, setIsSidebarOpened] = useState(true)
+
     return (
         <>
             <Head title="Dashboard" />
-            <div className="relative min-h-screen flex flex-row">
-
-                {isSidebarOpened ?
-                    <aside className='z-10 min-h-screen w-32 md:w-64 bg-minorBackground box-shadow-inset-r-dark'>
-                        <Sidebar />
-                    </aside>
-                    : null
-                }
+            <div className="relative min-h-screen flex flex-row-reverse">
 
                 <div className='absolute md:relative min-h-screen w-full bg-majorBackground'>
                     <Header>
@@ -26,6 +23,31 @@ export default function Dashboard({ props, children }) {
                     </Header>
                     <main>{children}</main>
                 </div>
+
+                <aside className={`fixed left-0 min-h-screen w-8/12 md:w-80 bg-minorBackground box-shadow-inset-r-dark transition duration-500 ease-in-out transform ${isSidebarOpened ? "" : "-translate-x-full"} `}>
+                    <Sidebar>
+                        <Sidebar.Header onclick={() => setIsSidebarOpened(!isSidebarOpened)} />
+                        <Sidebar.Body>
+                            <Sidebar.List>
+                                <Sidebar.Title>Menu</Sidebar.Title>
+                                <Sidebar.Item URL={route('dashboard.users.index')}>
+                                    <Sidebar.UserLogo />
+                                    <Sidebar.Label name='Users' />
+                                </Sidebar.Item>
+                                <Sidebar.Item URL={route('dashboard.products.index')}>
+                                    <Sidebar.ProductLogo />
+                                    <Sidebar.Label name='Products' />
+                                </Sidebar.Item>
+                                <Sidebar.Item URL={route('dashboard.partners.index')}>
+                                    <Sidebar.PartnerLogo />
+                                    <Sidebar.Label name='Partners' />
+                                </Sidebar.Item>
+                            </Sidebar.List>
+                        </Sidebar.Body>
+                    </Sidebar>
+                </aside>
+
+
             </div>
         </>
     );

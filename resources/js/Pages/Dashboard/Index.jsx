@@ -1,6 +1,8 @@
 import DashboardLayout from "@/Layouts/DashboardLayout"
 
 const Dashboard = (props) => {
+    console.log("index")
+
     return (
         <div>Hello this is the dashboard</div>
     )
