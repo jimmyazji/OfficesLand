@@ -59,7 +59,7 @@ SlideNav.SelectLang = function SlideNavSelectLang({ locale }) {
                             <MdKeyboardArrowDown />
                             {locale == "en" ? "English" : "العربية"}
                         </p>
-                        <p>{t("welcomePage.language")}</p>
+                        <p>{t("welcome-page.language")}</p>
                     </button>
                 </Dropdown.Trigger>
 

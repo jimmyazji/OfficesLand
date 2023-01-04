@@ -20,20 +20,18 @@ createInertiaApp({
         );
 
         page.then((module) => {
-            if (name.startsWith('Dashboard')) module = <DashboardLayout children={page}/>;
+            if (name.startsWith('Dashboard')) module = <DashboardLayout children={page} />;
         });
 
         return page
     },
     setup({ el, App, props }) {
         const root = createRoot(el);
-
         root.render(
             <LaravelReactI18nProvider
-                lang={'en'}
                 fallbackLang={'en'}
                 resolve={async (lang) => {
-                    const langs = import.meta.glob('../../lang/*.json')
+                    const langs = import.meta.glob('/lang/*.json');
                     const fn = langs[`/lang/${lang}.json`];
                     if (typeof fn === 'function') {
                         return await fn();

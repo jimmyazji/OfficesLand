@@ -77,10 +77,10 @@ NavBar.SelectLang = function NavBarSelectLang({ locale }) {
             </Dropdown.Trigger>
 
             <Dropdown.Content className="bg-minorBackground mt-5 w-40 rtl:left-0 ltr:right-0">
-                <Dropdown.Atag href="locale/ar" className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
+                <Dropdown.Atag href={route('locale','ar')} className="text-right text-accent hover:bg-majorBackground border-t-2 border-accent">
                     العربية
                 </Dropdown.Atag>
-                <Dropdown.Atag href="locale/en" className="text-right text-accent hover:bg-majorBackground">
+                <Dropdown.Atag href={route('locale','en')} className="text-right text-accent hover:bg-majorBackground">
                     English
                 </Dropdown.Atag>
             </Dropdown.Content>

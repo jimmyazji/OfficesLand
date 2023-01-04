@@ -15,11 +15,11 @@ export default function HeaderContainer({locale}) {
                         <NavBar.Logo />
 
                         <NavBar.List>
-                            <NavBar.Item URL={'/'}>{HeaderData.homeText}</NavBar.Item>
-                            <NavBar.Item URL={'#products'}>{HeaderData.productsText}</NavBar.Item>
-                            <NavBar.Item URL={'#catalog'}>{HeaderData.catalogText}</NavBar.Item>
-                            <NavBar.Item URL={'#about'}>{HeaderData.aboutusText}</NavBar.Item>
-                            <NavBar.Item URL={'#contact'}>{HeaderData.contactusText}</NavBar.Item>
+                            <NavBar.Item URL={'/'}>{t('welcome-page.home')}</NavBar.Item>
+                            <NavBar.Item URL={'#products'}>{t('welcome-page.products')}</NavBar.Item>
+                            <NavBar.Item URL={'#catalog'}>{t('welcome-page.catalog')}</NavBar.Item>
+                            <NavBar.Item URL={'#about'}>{t('welcome-page.about')}</NavBar.Item>
+                            <NavBar.Item URL={'#contact'}>{t('welcome-page.contact_us')}</NavBar.Item>
                         </NavBar.List>
 
                         <NavBar.Label>
@@ -38,11 +38,11 @@ export default function HeaderContainer({locale}) {
                             <SlideNav.LoginButton URL={'/login'}>تسجيل الدخول</SlideNav.LoginButton>
 
                             <SlideNav.Label>
-                                <SlideNav.Item URL={'/'}>{HeaderData.homeText}</SlideNav.Item>
-                                <SlideNav.Item URL={'/about'}>{HeaderData.aboutusText}</SlideNav.Item>
-                                <SlideNav.Item URL={'/products'}>{HeaderData.productsText}</SlideNav.Item>
-                                <SlideNav.Item URL={'/catalog'}>{HeaderData.catalogText}</SlideNav.Item>
-                                <SlideNav.Item URL={'/contact'}>{HeaderData.contactusText}</SlideNav.Item>
+                                <SlideNav.Item URL={'/'}>{t('welcome-page.home')}</SlideNav.Item>
+                                <SlideNav.Item URL={'/about'}>{t('welcome-page.about')}</SlideNav.Item>
+                                <SlideNav.Item URL={'/products'}>{t('welcome-page.products')}</SlideNav.Item>
+                                <SlideNav.Item URL={'/catalog'}>{t('welcome-page.catalog')}</SlideNav.Item>
+                                <SlideNav.Item URL={'/contact'}>{t('welcome-page.contact_us')}</SlideNav.Item>
                             </SlideNav.Label>
 
                             <SlideNav.SelectLang locale={locale} />
