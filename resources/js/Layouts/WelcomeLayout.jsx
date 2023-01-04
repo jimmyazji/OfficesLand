@@ -1,9 +1,10 @@
 import { HeaderContainer, FooterContainer } from '@/Containers/Client'
 
-export default function WelcomeLayout({ children, props, className }) {
+export default function WelcomeLayout({ children, locale, className }) {
+
     return (
         <div className={`${className}`}>
-            <HeaderContainer {...props} />
+            <HeaderContainer locale={locale} />
             <main>
                 {children}
             </main>

@@ -4,7 +4,7 @@ import { NavBar, SlideNav, Header } from '@/Components/Client'
 import { HeaderData } from '@/fixtures/WelcomeData'
 import { useLaravelReactI18n } from 'laravel-react-i18n'
 
-export default function HeaderContainer(props) {
+export default function HeaderContainer({locale}) {
     const [isSlideNavOpened, setIsSlideNavOpened] = useState(false)
     const { t, tChoice } = useLaravelReactI18n()
     return (
@@ -23,7 +23,7 @@ export default function HeaderContainer(props) {
                         </NavBar.List>
 
                         <NavBar.Label>
-                            <NavBar.SelectLang locale={props.locale} />
+                            <NavBar.SelectLang locale={locale} />
                         </NavBar.Label>
 
                         <NavBar.Hamburger
@@ -45,7 +45,7 @@ export default function HeaderContainer(props) {
                                 <SlideNav.Item URL={'/contact'}>{HeaderData.contactusText}</SlideNav.Item>
                             </SlideNav.Label>
 
-                            <SlideNav.SelectLang locale={props.locale} />
+                            <SlideNav.SelectLang locale={locale} />
                         </SlideNav.List>
                     </SlideNav.Container>
                 </SlideNav>

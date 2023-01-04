@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ContactUs, SendUs, Address } from '@/Components/Client'
 
 export default function ContactUsContainer() {
+    console.log("contact us section renderd")
     const [contactUsData, setContctUsData] = useState({
         name: '',
         phone: '',
