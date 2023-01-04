@@ -66,7 +66,7 @@ export default function ContactUsContainer() {
                 </SendUs>
                 <Address>
                     <Address.Container>
-                        <Address.Location>Kingdom of Saudi Arabia - Riyadh - Al Malaz</Address.Location>
+                        <Address.Location>Saudi Arabia - Riyadh - Al Malaz</Address.Location>
                         <Address.Email>info@offices-land.com</Address.Email>
                         <Address.Phone>+966 508-622-000</Address.Phone>
                         <Address.Map />

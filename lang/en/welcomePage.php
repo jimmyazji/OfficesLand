@@ -20,4 +20,5 @@ return [
     'sign_in' => 'Signin',
     'register' => 'Register',
     'dashboard' => 'Dashboard',
+    'language' => 'Language'
 ];

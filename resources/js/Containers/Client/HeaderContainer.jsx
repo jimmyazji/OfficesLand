@@ -7,7 +7,6 @@ import { useLaravelReactI18n } from 'laravel-react-i18n'
 export default function HeaderContainer(props) {
     const [isSlideNavOpened, setIsSlideNavOpened] = useState(false)
     const { t, tChoice } = useLaravelReactI18n()
-    console.log(t('Welcome :home!', { home: 'home' }))
 
     return (
         <Header>
@@ -45,6 +44,8 @@ export default function HeaderContainer(props) {
                 <SlideNav>
                     <SlideNav.Container isSlideNavOpened={isSlideNavOpened}>
                         <SlideNav.List >
+                            <SlideNav.LoginButton URL={'/login'}>تسجيل الدخول</SlideNav.LoginButton>
+
                             <SlideNav.Label>
                                 <SlideNav.Item URL={'/'}>{HeaderData.homeText}</SlideNav.Item>
                                 <SlideNav.Item URL={'/about'}>{HeaderData.aboutusText}</SlideNav.Item>
@@ -53,9 +54,7 @@ export default function HeaderContainer(props) {
                                 <SlideNav.Item URL={'/contact'}>{HeaderData.contactusText}</SlideNav.Item>
                             </SlideNav.Label>
 
-                            <SlideNav.SelectLang >اللغة</SlideNav.SelectLang>
-
-                            <SlideNav.LoginButton URL={'/login'}>تسجيل الدخول</SlideNav.LoginButton>
+                            <SlideNav.SelectLang locale={props.locale} />
                         </SlideNav.List>
                     </SlideNav.Container>
                 </SlideNav>

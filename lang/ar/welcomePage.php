@@ -20,4 +20,5 @@ return [
     'sign_in' => 'تسجيل الدخول',
     'register' => 'تسجيل حساب',
     'dashboard' => 'لوحة التحكم',
+    'language' => 'اللغة'
 ];

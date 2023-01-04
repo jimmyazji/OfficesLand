@@ -31,7 +31,7 @@ Address.Email = function AddressEmail({ children }) {
     return (
         <div className='flex flex-row items-center mb-4'>    
             <MdEmail className='mr-4 fill-accent text-2xl' />
-            <p className='text-lg lg:text-xl  text-accent'>
+            <p className='text-lg lg:text-xl text-accent'>
                 {children}
             </p>
         </div>

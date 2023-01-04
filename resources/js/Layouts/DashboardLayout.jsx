@@ -7,14 +7,14 @@ import { Sidebar } from '@/Components/Dashboard'
 export default function Dashboard({ props, children }) {
     console.log("dashboard layout")
 
-    const [isSidebarOpened, setIsSidebarOpened] = useState(true)
+    const [isSidebarOpened, setIsSidebarOpened] = useState(false)
 
     return (
         <>
             <Head title="Dashboard" />
             <div className="relative min-h-screen flex flex-row-reverse">
 
-                <div className='absolute md:relative min-h-screen w-full bg-majorBackground'>
+                <div className={`absolute md:relative min-h-screen w-full bg-majorBackground`}>
                     <Header>
                         <Header.Container>
                             <Header.Hamburger isSidebarOpened={isSidebarOpened} setIsSidebarOpened={setIsSidebarOpened} />
@@ -24,7 +24,7 @@ export default function Dashboard({ props, children }) {
                     <main>{children}</main>
                 </div>
 
-                <aside className={`fixed left-0 min-h-screen w-8/12 md:w-80 bg-minorBackground box-shadow-inset-r-dark transition duration-500 ease-in-out transform ${isSidebarOpened ? "" : "-translate-x-full"} `}>
+                <aside className={`fixed left-0 top-0 min-h-screen w-8/12 md:w-80 bg-minorBackground box-shadow-inset-r-dark transition duration-500 ease-in-out transform ${isSidebarOpened ? "" : "-translate-x-full"} `}>
                     <Sidebar>
                         <Sidebar.Header onclick={() => setIsSidebarOpened(!isSidebarOpened)} />
                         <Sidebar.Body>

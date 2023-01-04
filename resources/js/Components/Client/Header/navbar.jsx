@@ -6,6 +6,7 @@ import { FaSolarPanel } from 'react-icons/fa'
 
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown';
+import { useLaravelReactI18n } from 'laravel-react-i18n'
 
 export default function NavBar({ children }) {
     return (
@@ -64,15 +65,14 @@ NavBar.Label = function NavBarLabel({ URL, children }) {
     )
 }
 
-NavBar.SelectLang = function NavBarSelectLang({ locale, URL, children }) {
-    
-
+NavBar.SelectLang = function NavBarSelectLang({ locale }) {
+    const { t } = useLaravelReactI18n()
     return (
         <Dropdown className='hidden md:block text-xs rounded-full transition bg-minorBackground text-accent'>
             <Dropdown.Trigger>
                 <button className="flex flex-row-reverse gap-1 items-center text-lg px-3 py-1 hover:text-primary focus:outline-none transition ease-in-out duration-150">
                     <MdKeyboardArrowDown />
-                    {locale == "en" ? "English" : "العربية"}
+                    <p>{locale == "en" ? "English" : "العربية"}</p>
                 </button>
             </Dropdown.Trigger>
 

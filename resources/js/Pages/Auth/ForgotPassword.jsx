@@ -24,14 +24,13 @@ export default function ForgotPassword({ status }) {
         <GuestLayout className="bg-minorBackground">
             <Head title="Forgot Password" />
 
-            <div className="mb-4 text-sm text-gray-500 leading-normal">
-                Forgot your password? No problem. Just let us know your email address and we will email you a password
-                reset link that will allow you to choose a new one.
-            </div>
-
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
-            <div className="w-full max-w-md px-6 bg-minorBackground ">
+            <main className="w-full max-w-xl text-center mt-4 p-6 md:bg-minorBackground rounded-lg md:shadow-xl shadow-majorBackground md:border-2 border-majorBackground">
+                <div className="mb-4 text-sm text-gray-500 leading-normal">
+                    Forgot your password? No problem. Just let us know your email address and we will email you a password
+                    reset link that will allow you to choose a new one.
+                </div>
                 <form onSubmit={submit}>
                     <TextInput
                         type="text"
@@ -50,7 +49,7 @@ export default function ForgotPassword({ status }) {
                         </PrimaryButton>
                     </div>
                 </form>
-            </div>
+            </main>
         </GuestLayout>
     );
 }
