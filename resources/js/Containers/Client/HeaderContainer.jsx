@@ -7,7 +7,6 @@ import { useLaravelReactI18n } from 'laravel-react-i18n'
 export default function HeaderContainer(props) {
     const [isSlideNavOpened, setIsSlideNavOpened] = useState(false)
     const { t, tChoice } = useLaravelReactI18n()
-
     return (
         <Header>
             <Header.Container>
@@ -17,22 +16,14 @@ export default function HeaderContainer(props) {
 
                         <NavBar.List>
                             <NavBar.Item URL={'/'}>{HeaderData.homeText}</NavBar.Item>
-                            <NavBar.Item URL={'/about'}>{HeaderData.aboutusText}</NavBar.Item>
-                            <NavBar.Item URL={'/products'}>{HeaderData.productsText}</NavBar.Item>
-                            <NavBar.Item URL={'/catalog'}>{HeaderData.catalogText}</NavBar.Item>
-                            <NavBar.Item URL={'/contact'}>{HeaderData.contactusText}</NavBar.Item>
+                            <NavBar.Item URL={'#products'}>{HeaderData.productsText}</NavBar.Item>
+                            <NavBar.Item URL={'#catalog'}>{HeaderData.catalogText}</NavBar.Item>
+                            <NavBar.Item URL={'#about'}>{HeaderData.aboutusText}</NavBar.Item>
+                            <NavBar.Item URL={'#contact'}>{HeaderData.contactusText}</NavBar.Item>
                         </NavBar.List>
 
                         <NavBar.Label>
                             <NavBar.SelectLang locale={props.locale} />
-                            {props.auth.user
-                                ?
-                                <NavBar.DashboardButton URL={route('login')}>
-                                    {HeaderData.dashboardText}
-                                </NavBar.DashboardButton>
-                                :
-                                <NavBar.LoginButton URL={route('dashboard')} />
-                            }
                         </NavBar.Label>
 
                         <NavBar.Hamburger

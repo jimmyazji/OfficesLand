@@ -33,22 +33,6 @@ const Trigger = ({ children }) => {
 const Content = ({ align = '', width = '48', className = '', children }) => {
     const { open, setOpen } = useContext(DropDownContext);
 
-    let alignmentClasses = 'origin-top';
-
-    if (align === 'left') {
-        alignmentClasses = 'left-0';
-    } else if (align === 'right') {
-        alignmentClasses = 'right-0';
-    }
-
-    let widthClasses = '';
-
-    if (width === '48') {
-        widthClasses = 'w-48';
-    } else {
-        widthClasses = width;
-    }
-
     return (
         <>
             <Transition
@@ -61,10 +45,9 @@ const Content = ({ align = '', width = '48', className = '', children }) => {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
             >
-                <div
-                    className={`absolute z-50 mt-2 rounded-b-md shadow-lg ${alignmentClasses} ${widthClasses}`}
+                <div className={`absolute z-50 mt-2 rounded-b-md shadow-lg ${className}`}
                     onClick={() => setOpen(false)}>
-                    <div className={`rounded-b-md ring-1 ring-black ring-opacity-5 ` + className}>
+                    <div className={`rounded-b-md ring-1 ring-black ring-opacity-5 `}>
                         {children}
                     </div>
                 </div>

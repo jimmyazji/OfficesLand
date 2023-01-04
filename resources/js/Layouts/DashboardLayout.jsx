@@ -12,16 +12,18 @@ export default function Dashboard({ props, children }) {
     return (
         <>
             <Head title="Dashboard" />
-            <div className="relative min-h-screen flex flex-row-reverse">
+            <div className="relative min-h-screen w-full">
 
-                <div className={`absolute md:relative min-h-screen w-full bg-majorBackground`}>
+                <div className={`absolute w-full md:relative min-h-screen bg-majorBackground`}>
                     <Header>
                         <Header.Container>
                             <Header.Hamburger isSidebarOpened={isSidebarOpened} setIsSidebarOpened={setIsSidebarOpened} />
                             <Header.Dropdown  {...props} />
                         </Header.Container>
                     </Header>
-                    <main>{children}</main>
+                    <main className="w-[90%] mx-auto mt-12 ">
+                        {children}
+                    </main>
                 </div>
 
                 <aside className={`fixed left-0 top-0 min-h-screen w-8/12 md:w-80 bg-minorBackground box-shadow-inset-r-dark transition duration-500 ease-in-out transform ${isSidebarOpened ? "" : "-translate-x-full"} `}>
@@ -46,7 +48,6 @@ export default function Dashboard({ props, children }) {
                         </Sidebar.Body>
                     </Sidebar>
                 </aside>
-
 
             </div>
         </>

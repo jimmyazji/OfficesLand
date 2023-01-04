@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ContactUs({ children }) {
     return (
-        <section className='w-full h-full bg-majorBackground'>
+        <section className='w-full h-full bg-majorBackground' id='contact'>
             {children}
         </section>
     )

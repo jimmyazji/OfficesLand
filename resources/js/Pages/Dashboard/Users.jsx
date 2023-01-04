@@ -7,7 +7,7 @@ const Users = (props) => {
     console.log('users')
 
     return (
-        <main className="w-[90%] mx-auto mt-12 ">
+        <>
             <div className="flex justify-end">
                 <Table.Search />
             </div>
@@ -41,7 +41,7 @@ const Users = (props) => {
                 </Table>
             </Table.Container>
             <Table.Pagination />
-        </main>
+        </>
     )
 }
 Users.layout = page => <DashboardLayout props={page.props} children={page} title="Users" />
