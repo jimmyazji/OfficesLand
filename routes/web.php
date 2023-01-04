@@ -1,15 +1,13 @@
 <?php
 
 use Inertia\Inertia;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Session;
 
 Route::get('locale/{locale}', function ($locale) {
-    App::setLocale($locale);
-    Session::put('locale', $locale);
-    return redirect()->back();
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back(303);
 })->name('locale');
 
 
