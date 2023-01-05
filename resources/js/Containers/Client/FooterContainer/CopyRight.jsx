@@ -1,4 +1,3 @@
-import React from 'react'
 import { BiCopyright } from 'react-icons/bi'
 
 export default function CopyRight({ children }) {

@@ -14,7 +14,7 @@ export default function Header({ children }) {
 
 Header.Container = function HeaderContainer({ children }) {
     return (
-        <div className='flex justify-between items-center h-10 md:h-12 lg:h-16 px-2 md:px-4 bg-minorBackground'>
+        <div className='flex justify-between items-center h-12 md:h-16 px-4 bg-minorBackground'>
             {children}
         </div>
     )
@@ -22,9 +22,9 @@ Header.Container = function HeaderContainer({ children }) {
 
 Header.Dropdown = function HeaderDropdown({ auth }) {
     return (
-        <Dropdown className={""}>
+        <Dropdown >
             <Dropdown.Trigger>
-                <span className="inline-flex rounded-md">
+                <span className="inline-flex rounded-md ">
                     <button className="flex items-center text-xl md:text-4xl text-accent py-2 rounded-md hover:text-majorBackground focus:text-majorBackground transition ease-in-out duration-150">
                         <FaUserCircle />
                         <RiArrowDropDownLine />
@@ -32,7 +32,7 @@ Header.Dropdown = function HeaderDropdown({ auth }) {
                 </span>
             </Dropdown.Trigger>
 
-            <Dropdown.Content align='right' className='bg-minorBackground rounded-b-md border-t-2 border-accent'>
+            <Dropdown.Content className='bg-minorBackground rounded-b-md border-t-2 border-accent right-0 w-40 '>
                 <p className='text-gray-500 cursor-text text-right p-2'> {auth.user.name}</p>
                 <Dropdown.Link href={route('logout')} method="post" as="button" className={"text-right rounded-b-md text-accent hover:bg-majorBackground"}>
                     Log Out
@@ -62,11 +62,11 @@ Header.Hamburger = function HeaderHamburger({ isSidebarOpened, setIsSidebarOpene
     }
 
     return (
-        <button className='w-7 h-[18px] flex flex-col justify-between cursor-pointer transition duration-500 ease-in-out'
+        <button className='w-5 h-4 flex flex-col justify-between cursor-pointer transition duration-500 ease-in-out'
             onClick={() => hamburgerAnimation()}>
-            <span ref={sliceRef1} className='w-full h-[2px] rounded-full bg-gray-400 transition duration-500 ease-in-out'></span>
-            <span ref={sliceRef2} className='w-full h-[2px] rounded-full bg-gray-400 transition duration-500 ease-in-out'></span>
-            <span ref={sliceRef3} className='w-full h-[2px] rounded-full bg-gray-400 transition duration-500 ease-in-out'></span>
+            <span ref={sliceRef1} className='w-full h-[3px] rounded-full bg-gray-400 transition duration-500 ease-in-out'></span>
+            <span ref={sliceRef2} className='w-full h-[3px] rounded-full bg-gray-400 transition duration-500 ease-in-out'></span>
+            <span ref={sliceRef3} className='w-full h-[3px] rounded-full bg-gray-400 transition duration-500 ease-in-out'></span>
         </button>
     )
 }

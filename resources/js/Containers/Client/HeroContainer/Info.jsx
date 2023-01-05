@@ -10,7 +10,7 @@ export default function Info({ children }) {
 
 Info.Container = function InfoContainer({ children }) {
     return (
-        <div className="z-10 text-left mx-4 mb-16 md:mb-40">
+        <div className="z-10 text-left rtl:text-right mx-4 mb-16 md:mb-40">
             {children}
         </div>
     )

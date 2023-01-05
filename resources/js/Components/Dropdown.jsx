@@ -30,7 +30,7 @@ const Trigger = ({ children }) => {
     );
 };
 
-const Content = ({ align = '', width = '48', className = '', children }) => {
+const Content = ({ className = '', children }) => {
     const { open, setOpen } = useContext(DropDownContext);
 
     return (

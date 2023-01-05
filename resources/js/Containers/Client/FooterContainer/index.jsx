@@ -1,10 +1,11 @@
-import { Footer, SocialMedia, CopyRight } from '@/Components/Client'
+import SocialMedia from './SocialMedia'
+import CopyRight from './CopyRight'
 
 export default function FooterContainer() {
     return (
-        <>
-            <Footer >
-                <Footer.Container>
+        <footer>
+            <section id='footer' className='w-full h-full bg-minorBackground'>
+                <div className="flex flex-col gap-4 items-center max-w-[1240px] mx-auto">
                     <SocialMedia>
                         <SocialMedia.Container>
                             <SocialMedia.Logo URL={'/'} />
@@ -13,13 +14,13 @@ export default function FooterContainer() {
                             <SocialMedia.Twitter URL={'https://www.twitter.com/spacetoongo'} />
                         </SocialMedia.Container>
                     </SocialMedia>
-                </Footer.Container>
-            </Footer>
+                </div>
+            </section>
             <CopyRight>
                 <CopyRight.Container>
                     <CopyRight.CompanyName>Offices Land 2010-2022 </CopyRight.CompanyName>
                 </CopyRight.Container>
             </CopyRight>
-        </>
+        </footer>
     )
 }

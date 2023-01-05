@@ -1,5 +1,4 @@
 import { Link } from '@inertiajs/inertia-react'
-import { useLaravelReactI18n } from 'laravel-react-i18n'
 
 import Dropdown from '@/Components/Dropdown';
 import { MdKeyboardArrowDown } from 'react-icons/md'
@@ -48,8 +47,7 @@ SlideNav.Item = function SlideNavItem({ URL, children }) {
     )
 }
 
-SlideNav.SelectLang = function SlideNavSelectLang({ locale }) {
-    const { t } = useLaravelReactI18n()
+SlideNav.SelectLang = function SlideNavSelectLang({ locale, languageText }) {
     return (
         <li className='flex flex-row justify-between w-full mt-4 px-2 py-2 bg-majorBackground rounded-lg text-right '>
             <Dropdown className='w-full text-sm text-accent '>
@@ -59,11 +57,11 @@ SlideNav.SelectLang = function SlideNavSelectLang({ locale }) {
                             <MdKeyboardArrowDown />
                             {locale == "en" ? "English" : "العربية"}
                         </p>
-                        <p>{t("welcome-page.language")}</p>
+                        <p>{languageText}</p>
                     </button>
                 </Dropdown.Trigger>
 
-                <Dropdown.Content align='left' className="bg-accent w-full mt-2" width='w-full'>
+                <Dropdown.Content className="bg-accent w-full mt-4 rtl:text-right">
                     <Dropdown.Atag href="locale/ar">
                         العربية
                     </Dropdown.Atag>

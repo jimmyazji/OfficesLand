@@ -1,8 +1,8 @@
 import { Head } from '@inertiajs/inertia-react';
-import { Header } from '@/Components/Dashboard';
 import { useState } from 'react';
-import { Sidebar } from '@/Components/Dashboard'
 
+import { Header } from '@/Containers/Dashboard';
+import { Sidebar } from '@/Containers/Dashboard'
 
 export default function Dashboard({ props, children }) {
     console.log("dashboard layout")
@@ -14,7 +14,7 @@ export default function Dashboard({ props, children }) {
             <Head title="Dashboard" />
             <div className="relative min-h-screen w-full">
 
-                <div className={`absolute w-full md:relative min-h-screen bg-majorBackground`}>
+                <div className={`absolute w-full min-h-screen bg-majorBackground`}>
                     <Header>
                         <Header.Container>
                             <Header.Hamburger isSidebarOpened={isSidebarOpened} setIsSidebarOpened={setIsSidebarOpened} />
@@ -26,7 +26,7 @@ export default function Dashboard({ props, children }) {
                     </main>
                 </div>
 
-                <aside className={`fixed left-0 top-0 min-h-screen w-8/12 md:w-80 bg-minorBackground box-shadow-inset-r-dark transition duration-500 ease-in-out transform ${isSidebarOpened ? "" : "-translate-x-full"} `}>
+                <aside className={`fixed left-0 top-0 min-h-screen w-64 md:w-80 bg-minorBackground box-shadow-inset-r-dark transition duration-500 ease-in-out transform ${isSidebarOpened ? "" : "-translate-x-full"} `}>
                     <Sidebar>
                         <Sidebar.Header onclick={() => setIsSidebarOpened(!isSidebarOpened)} />
                         <Sidebar.Body>

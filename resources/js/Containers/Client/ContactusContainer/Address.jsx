@@ -19,7 +19,7 @@ Address.Container = function AddressContainer({ children }) {
 Address.Location = function AddressLocation({ children }) {
     return (
         <div className='flex flex-row items-center mb-4'>
-            <MdLocationOn className='mr-4 fill-accent text-2xl' />
+            <MdLocationOn className='mr-4 rtl:ml-4 fill-accent text-2xl' />
             <p className='text-lg lg:text-xl  text-accent'>
                 {children}
             </p>
@@ -30,7 +30,7 @@ Address.Location = function AddressLocation({ children }) {
 Address.Email = function AddressEmail({ children }) {
     return (
         <div className='flex flex-row items-center mb-4'>    
-            <MdEmail className='mr-4 fill-accent text-2xl' />
+            <MdEmail className='mr-4 rtl:ml-4 fill-accent text-2xl' />
             <p className='text-lg lg:text-xl text-accent'>
                 {children}
             </p>
@@ -41,9 +41,9 @@ Address.Email = function AddressEmail({ children }) {
 Address.Phone = function AddressEmail({ children }) {
     return (
         <div className='flex flex-row items-center mb-4'>
-            <MdPhone className='mr-4 fill-accent text-2xl' />
+            <MdPhone className='mr-4 rtl:ml-4 fill-accent text-2xl' />
             <a href={`tel:${children}`}>
-                <p className='text-lg lg:text-xl  text-accent'>
+                <p dir="ltr" className='text-lg lg:text-xl text-accent'>
                     {children}
                 </p>
             </a>

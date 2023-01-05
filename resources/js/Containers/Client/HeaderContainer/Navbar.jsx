@@ -1,12 +1,12 @@
 import { Link } from '@inertiajs/inertia-react'
 import { useRef } from 'react'
-import { BiLogIn } from 'react-icons/bi'
-import { MdKeyboardArrowDown } from 'react-icons/md'
-import { FaSolarPanel } from 'react-icons/fa'
 
 import ApplicationLogo from '@/Components/ApplicationLogo'
 import Dropdown from '@/Components/Dropdown';
-import { useLaravelReactI18n } from 'laravel-react-i18n'
+
+import { BiLogIn } from 'react-icons/bi'
+import { MdKeyboardArrowDown } from 'react-icons/md'
+import { FaSolarPanel } from 'react-icons/fa'
 
 export default function NavBar({ children }) {
     return (
@@ -23,7 +23,6 @@ NavBar.Container = function NavBarContainer({ children }) {
         </nav>
     )
 }
-
 
 NavBar.Logo = function NavBarLogo({ URL }) {
     return (
@@ -66,7 +65,6 @@ NavBar.Label = function NavBarLabel({ URL, children }) {
 }
 
 NavBar.SelectLang = function NavBarSelectLang({ locale }) {
-    const { t } = useLaravelReactI18n()
     return (
         <Dropdown className='hidden md:block text-xs rounded-full transition bg-minorBackground text-accent'>
             <Dropdown.Trigger>

@@ -15,7 +15,7 @@ export default function Sidebar({ children }) {
 Sidebar.Header = function SidebarHeader({ onclick }) {
     return (
         <div className='flex flex-col items-center pt-20 justify-center gap-2'>
-            <MdClose className='absolute top-5 left-5 text-4xl text-primary cursor-pointer' onClick={onclick} />
+            <MdClose className='absolute top-3 left-3 text-4xl text-primary cursor-pointer' onClick={onclick} />
             <ApplicationLogo className="h-14 md:h-16 lg:h-24" />
             <p className='text-lg md:text-xl lg:text-2xl text-primary font-bold uppercase'> Offices Land</p>
         </div>

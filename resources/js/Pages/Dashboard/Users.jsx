@@ -1,6 +1,6 @@
-import Table from "@/Components/Dashboard/Table"
+import { Table } from "@/Containers/Dashboard"
 import DashboardLayout from "@/Layouts/DashboardLayout"
-import JSONdata from '@/fixtures/MOCK_DATA'
+import JSONdata from './MOCK_DATA'
 
 const Users = (props) => {
     const MOCK_DATA = JSONdata
