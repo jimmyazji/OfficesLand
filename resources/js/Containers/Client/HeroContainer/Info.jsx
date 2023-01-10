@@ -32,9 +32,9 @@ Info.SubTitle = function InfoSubtitle({ children }) {
     )
 }
 
-Info.Button = function InfoButton({ slide_id, children }) {
+Info.Button = function InfoButton({ id, children }) {
     return (
-        <Link href={`/products/${slide_id}`}>
+        <Link href={`/products/${id}`}>
             <button className='mt-12 px-4 py-1 bg-minorBackground rounded-lg hover:opacity-50'>
                 <p className='text-xs md:text-base lg:text-lg text-accent '>
                     {children}

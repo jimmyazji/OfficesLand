@@ -3,6 +3,8 @@ import { BsArrowRightShort } from 'react-icons/bs'
 import Slider from "@/Components/Slider";
 
 export default function ProdcutsContainer() {
+    console.log("products section renderd")
+
     const DUMMY_DATA = [
         {
             id: '1',
@@ -36,8 +38,10 @@ export default function ProdcutsContainer() {
                 <div className="flex flex-col items-baseline lg:h-64 justify-center">
                     <h2 className="font-bold text-3xl text-accent max-w-xs mb-2 lg:mb-6">New in Store Now</h2>
                     <p className="text-accent max-w-xs mb-6 lg:mb-8">Get the latest item with promo prices</p>
-                    <div className="hidden lg:flex items-center text-primary w-full" href="/products">
-                        <Link className="leading-none hover:border-b border-primary lg:items-center font-medium transition-all">
+                    <div className="hidden lg:flex items-center text-primary w-full">
+                        <Link className="leading-none hover:border-b border-primary lg:items-center font-medium transition-all"
+                            href="/products"
+                        >
                             See more
                         </Link>
                         <BsArrowRightShort className="text-2xl" />

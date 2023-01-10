@@ -3,7 +3,7 @@ import slideImage from '@/../assets/products/1.jpg'
 import { useLaravelReactI18n } from 'laravel-react-i18n'
 import Slider from '@/Components/Slider'
 
-export default function HeroContainer({ slide_id }) {
+export default function HeroContainer() {
     const { t } = useLaravelReactI18n()
     const DUMMY_DATA = [
         {
@@ -28,6 +28,7 @@ export default function HeroContainer({ slide_id }) {
                         DUMMY_DATA={DUMMY_DATA}
                         imageHight="h-full"
                         effect={'fade'}
+                        autoplay={{delay:2000}}
                         pagination={{ clickable: true }}
                         loop={true} >
                         <div className='absolute top-0 h-full w-full hero-top-shadow'>
@@ -35,7 +36,7 @@ export default function HeroContainer({ slide_id }) {
                                 <Info.Container >
                                     <Info.Title>{t("welcome-page.hero_title")}</Info.Title>
                                     <Info.SubTitle>{t("welcome-page.hero_subtitle")}</Info.SubTitle>
-                                    <Info.Button slide_id={slide_id}>{t("welcome-page.hero_button")}</Info.Button>
+                                    <Info.Button id={DUMMY_DATA[0].id}>{t("welcome-page.hero_button")}</Info.Button>
                                 </Info.Container>
                             </Info>
                         </div>

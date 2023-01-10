@@ -9,7 +9,7 @@ export default function Welcome(props) {
         <>
             <Head title="Welcome" />
             <WelcomeLayout {...props}>
-                <HeroContainer slide_id={2} />
+                <HeroContainer />
                 <ProductsContainer />
                 <ContactUsContainer />
             </WelcomeLayout>

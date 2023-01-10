@@ -1,16 +1,18 @@
+import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md'
+
 import { Swiper, SwiperSlide } from "swiper/react"
-import { EffectFade, Pagination } from 'swiper';
+import { EffectFade, Pagination, Autoplay } from 'swiper';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
-
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-icons/md'
+import 'swiper/css/autoplay';
 
 export default function Slider({
     children,
     className,
     imageHight = "",
+    autoplay = false,
     DUMMY_DATA,
     pagination,
     breakpoints,
@@ -20,12 +22,13 @@ export default function Slider({
 
     return (
         <Swiper className={`relative ${className}`}
-            modules={[Pagination, EffectFade]}
+            modules={[Pagination, EffectFade, Autoplay]}
             pagination={pagination}
             breakpoints={breakpoints}
             effect={effect}
             speed={speed}
             loop={loop}
+            autoplay={autoplay}
         >
             {DUMMY_DATA.map((item) => {
                 return (

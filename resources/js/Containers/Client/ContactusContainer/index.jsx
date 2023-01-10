@@ -11,7 +11,6 @@ export default function ContactUsContainer() {
     const [contactUsData, setContctUsData] = useState({
         name: '',
         phone: '',
-        country: {},
         email: '',
         message: '',
     })

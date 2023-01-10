@@ -20,5 +20,14 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/products', function () {
+    return Inertia::render('Products', [
+        'phpVersion' => PHP_VERSION,
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+    ]);
+});
+
 require __DIR__ . '/auth.php';
 require __DIR__ . '/dashboard.php';
