@@ -26,7 +26,8 @@ export default function HeroContainer({ slide_id }) {
                 <div className="relative w-full h-full">
                     <Slider className="w-full h-full"
                         DUMMY_DATA={DUMMY_DATA}
-                        imageHight="full"
+                        imageHight="h-full"
+                        effect={'fade'}
                         pagination={{ clickable: true }}
                         loop={true} >
                         <div className='absolute top-0 h-full w-full hero-top-shadow'>

@@ -1,10 +1,7 @@
-import { Children, useRef } from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react"
-import { EffectFade, Navigation, Pagination } from 'swiper';
+import { EffectFade, Pagination } from 'swiper';
 
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
@@ -13,19 +10,17 @@ import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from 'react-i
 export default function Slider({
     children,
     className,
-    imageHight = "full",
+    imageHight = "",
     DUMMY_DATA,
     pagination,
     breakpoints,
     effect = '',
     loop = false,
     speed = 800 }) {
-    const rightArrowRef = useRef()
-    const leftArrowRef = useRef()
 
     return (
         <Swiper className={`relative ${className}`}
-            modules={[Navigation, Pagination, EffectFade]}
+            modules={[Pagination, EffectFade]}
             pagination={pagination}
             breakpoints={breakpoints}
             effect={effect}

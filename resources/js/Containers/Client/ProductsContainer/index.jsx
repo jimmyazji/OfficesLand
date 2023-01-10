@@ -47,7 +47,7 @@ export default function ProdcutsContainer() {
                     <Slider className="h-72 lg:max-w-2xl xl:max-w-4xl"
                         DUMMY_DATA={DUMMY_DATA}
                         pagination={{ clickable: true }}
-                        imageHight="h-80"
+                        imageHight="h-[85%]"
                         breakpoints={{
                             0: {
                                 slidesPerView: 1,
