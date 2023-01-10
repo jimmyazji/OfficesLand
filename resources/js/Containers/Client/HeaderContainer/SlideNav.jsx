@@ -5,25 +5,15 @@ import { MdKeyboardArrowDown } from 'react-icons/md'
 
 export default function SlideNav({ children }) {
     return (
-        <div className="md:hidden">
+        <div className="bg-minorBackground w-full h-full">
             {children}
         </div>
     )
 }
 
-SlideNav.Container = function SlideNavContainer({ children, isSlideNavOpened }) {
-    return (
-        <nav
-            className={`flex flex-col justify-between h-screen w-screen fixed right-0 ltr:left-0 top-14 ${isSlideNavOpened ? '' : "translate-x-full rtl:-translate-x-full"}
-            bg-minorBackground transition duration-500 ease-in-out transform`}>
-            {children}
-        </nav>
-    )
-}
-
 SlideNav.List = function SlideNavList({ children }) {
     return (
-        <ul className='flex flex-col text-left rtl:text-right w-[95%] mx-auto h-full justify-start pb-20 mt-4'>
+        <ul className='flex flex-col text-left rtl:text-right w-[95%] mx-auto h-full mt-4'>
             {children}
         </ul>
     )
@@ -31,7 +21,7 @@ SlideNav.List = function SlideNavList({ children }) {
 
 SlideNav.Label = function SlideNavLabel({ children }) {
     return (
-        <div className='flex flex-col rounded-lg bg-majorBackground px-2'>
+        <div className='flex flex-col rounded-md bg-majorBackground px-2'>
             {children}
         </div>
     )
@@ -39,7 +29,7 @@ SlideNav.Label = function SlideNavLabel({ children }) {
 
 SlideNav.Item = function SlideNavItem({ URL, children }) {
     return (
-        <li className='text-sm text-accent w-full mt-2 pb-2 ease-in-out hover:text-primary border-b-2 border-accent  last-of-type:border-0'>
+        <li className='text-sm text-accent w-full mt-2 pb-1 ease-in-out hover:text-primary border-b border-accent last-of-type:border-none'>
             <Link href={URL}>
                 {children}
             </Link>
@@ -49,23 +39,23 @@ SlideNav.Item = function SlideNavItem({ URL, children }) {
 
 SlideNav.SelectLang = function SlideNavSelectLang({ locale, languageText }) {
     return (
-        <li className='flex flex-row justify-between w-full mt-4 px-2 py-2 bg-majorBackground rounded-lg text-right '>
-            <Dropdown className='w-full text-sm text-accent '>
+        <li className='w-full mt-4'>
+            <Dropdown className='w-full text-sm text-accent bg-majorBackground rounded-md'>
                 <Dropdown.Trigger >
-                    <button className="flex flex-row-reverse justify-between items-center w-full border border-transparent hover:text-primary focus:outline-none transition ease-in-out duration-150">
-                        <p className='flex flex-row-reverse items-center gap-1'>
-                            <MdKeyboardArrowDown />
-                            {locale == "en" ? "English" : "العربية"}
-                        </p>
+                    <button className="flex justify-between items-center w-full p-2 border border-transparent">
                         <p>{languageText}</p>
+                        <p className='flex ltr:flex-row-reverse items-center gap-1 hover:text-primary focus:outline-none transition-all ease-in-out duration-150'>
+                            {locale == "ar" ? "العربية" : "English"}
+                            <MdKeyboardArrowDown />
+                        </p>
                     </button>
                 </Dropdown.Trigger>
 
-                <Dropdown.Content className="bg-accent w-full mt-4 rtl:text-right">
-                    <Dropdown.Atag href="locale/ar">
+                <Dropdown.Content className="bg-majorBackground w-full mt-2 text-left rtl:text-right">
+                    <Dropdown.Atag href="locale/ar" className='hover:bg-minorBackground border-t border-accent'>
                         العربية
                     </Dropdown.Atag>
-                    <Dropdown.Atag href="locale/en" >
+                    <Dropdown.Atag href="locale/en" className='hover:bg-minorBackground'>
                         English
                     </Dropdown.Atag>
                 </Dropdown.Content>

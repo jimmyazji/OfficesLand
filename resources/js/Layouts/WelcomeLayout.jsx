@@ -1,11 +1,11 @@
 import { HeaderContainer, FooterContainer } from '@/Containers/Client'
 
-export default function WelcomeLayout({ children, locale, className }) {
+export default function WelcomeLayout({ children, locale }) {
 
     return (
-        <div className={`${className}`}>
+        <div className="relative min-h-screen">
             <HeaderContainer locale={locale} />
-            <main>
+            <main >
                 {children}
             </main>
             <FooterContainer />

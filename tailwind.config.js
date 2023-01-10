@@ -20,8 +20,6 @@ module.exports = {
             },
         },
         screens: {
-            xxs: '0',
-            xs: '410px',
             sm: '640px',
             md: '768px',
             lg: '1024px',
@@ -31,14 +29,20 @@ module.exports = {
             colors: {
                 primary: '#224284',
                 accent: '#c4c8cb',
+                majorBackground: '#0d1017',
                 minorBackground: '#161b21',
-                majorBackground:'#0d1017',
                 hover: '#20262d',
+
+                // blueLg: '#1E2839',
+                // blueMd: '#283347',
+                // blueSm: '#434E61',
+                // grayLg: '#647187',
+                // grayMd: '#C4C5C9',
+                // graySm: '#E3E4E6',
             },
         },
     },
     plugins: [require('@tailwindcss/forms')],
-    
 };
 
 

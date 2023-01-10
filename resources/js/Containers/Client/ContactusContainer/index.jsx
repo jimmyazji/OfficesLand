@@ -7,7 +7,7 @@ import SendUs from './SendUs'
 export default function ContactUsContainer() {
     console.log("contact us section renderd")
     const { t } = useLaravelReactI18n()
-    
+
     const [contactUsData, setContctUsData] = useState({
         name: '',
         phone: '',
@@ -30,11 +30,11 @@ export default function ContactUsContainer() {
     }
 
     return (
-        <section id='contact' className='w-full h-full bg-majorBackground' >
-            <h2 className='text-3xl text-accent font-bold text-center pt-8'>
+        <section id='contact' className='w-full h-full bg-majorBackground py-12'>
+            <h2 className='text-3xl text-accent font-bold text-center'>
                 CONTACT US
             </h2>
-            <div className='flex flex-col-reverse md:flex-row-reverse gap-16 lg:gap-16 max-w-[1040px] h-full w-[95%] mx-auto py-12'>
+            <div className='container mx-auto pt-12 flex flex-col-reverse lg:flex-row-reverse gap-16'>
                 <SendUs>
                     <SendUs.Form onSubmit={submitMassage}>
                         <SendUs.Container>

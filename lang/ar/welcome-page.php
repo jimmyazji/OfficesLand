@@ -6,7 +6,7 @@ return [
     'header_products' => 'المنتجات',
     'header_catalog' => 'الكتالوج',
     'header_about' => 'عن الشركة',
-    'header_contact_us' => 'تواصل معنا',
+    'header_contact' => 'تواصل معنا',
     'header_language' => 'اللغة',
     'header_log_in' => 'تسجيل الدخول',
 

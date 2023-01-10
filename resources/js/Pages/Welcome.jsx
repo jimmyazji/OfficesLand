@@ -1,5 +1,5 @@
 import { Head } from '@inertiajs/inertia-react';
-import { HeroContainer, ContactUsContainer } from '@/Containers/Client'
+import { HeroContainer, ContactUsContainer, ProductsContainer } from '@/Containers/Client'
 import WelcomeLayout from '@/Layouts/WelcomeLayout'
 
 export default function Welcome(props) {
@@ -8,8 +8,9 @@ export default function Welcome(props) {
     return (
         <>
             <Head title="Welcome" />
-            <WelcomeLayout {...props} className="relative min-h-screen bg-minorBackground">
+            <WelcomeLayout {...props}>
                 <HeroContainer slide_id={2} />
+                <ProductsContainer />
                 <ContactUsContainer />
             </WelcomeLayout>
         </>

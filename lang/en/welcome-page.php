@@ -8,7 +8,7 @@ return [
     'header_products' => 'Products',
     'header_catalog' => 'Catalog',
     'header_about' => 'About',
-    'header_contact_us' => 'Contact Us',
+    'header_contact' => 'Contact',
     'header_language' => 'Language',
     'header_log_in' => 'Log In',
 
